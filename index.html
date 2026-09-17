@@ -73,6 +73,10 @@ a{color:inherit;}
   margin:0 0 34px;
 }
 .hero .tags{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  gap:0;
   font-family:"IBM Plex Mono",monospace;
   font-size:11px;
   letter-spacing:.1em;
@@ -175,17 +179,20 @@ nav.index a:hover{color:var(--ink);border-color:var(--coral);}
 /* ---------- BIO / CV / CONTACT / CLOSING ---------- */
 .closing{padding-block:88px 96px;}
 .closing-grid{
-  display:grid;gap:24px;
+  display:grid;grid-template-columns:minmax(0,1fr);gap:24px;
 }
 .closing-row2{
-  display:grid;grid-template-columns:1.15fr .85fr;gap:24px;
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:24px;
 }
 .bio-tile,.contact-tile,.cv-tile{
+  min-width:0;
   background:var(--surface);
   box-shadow:0 0 0 1px color-mix(in srgb, var(--line) 70%, transparent);
   border-radius:18px;
   padding:42px 40px;
 }
+.contact-tile a{word-break:break-word;overflow-wrap:anywhere;}
+.cv-skills{overflow-wrap:anywhere;}
 .bio-tile{background:var(--surface-2);}
 .bio-tile .lbl,.contact-tile .lbl,.cv-tile .lbl{
   font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;
